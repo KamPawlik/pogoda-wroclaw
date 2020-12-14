@@ -1,0 +1,35 @@
+<div class="time">
+    {{ currentDate | date:'HH:mm'}}
+    <span class="time__description">Ostatnia aktualizacja</span>
+</div>
+
+<div class="detail-list" *ngIf="result">
+    <dl class="list-item">
+        <dt class="list-item__dt">Temperatura:</dt>
+        <dd class="list-item__dd">{{result.main.temp}}&deg;C</dd>
+    </dl>
+    <dl class="list-item">
+        <dt class="list-item__dt">Temperatura odczuwalna:</dt>
+        <dd class="list-item__dd">{{result.main.feels_like}}&deg;C</dd>
+    </dl>
+    <dl class="list-item">
+        <dt class="list-item__dt">Temperatura minimalna:</dt>
+        <dd class="list-item__dd">{{result.main.temp_min}}&deg;C</dd>
+    </dl>
+    <dl class="list-item">
+        <dt class="list-item__dt">Temperatura maksymalna:</dt>
+        <dd class="list-item__dd">{{result.main.temp_max}}&deg;C</dd>
+    </dl>
+    <dl class="list-item">
+        <dt class="list-item__dt">Ciśnienie:</dt>
+        <dd class="list-item__dd">{{result.main.pressure}}hPa</dd>
+    </dl>
+    <dl class="list-item">
+        <dt class="list-item__dt">Wilgotność:</dt>
+        <dd class="list-item__dd">{{result.main.humidity}}%</dd>
+    </dl>
+    <dl class="list-item">
+        <dt class="list-item__dt">Poziom zachmurzenia:</dt>
+        <dd class="list-item__dd">{{result.clouds.all}}%</dd>
+    </dl>
+</div>

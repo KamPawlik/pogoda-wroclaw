@@ -1,0 +1,31 @@
+.btn {
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+    min-width: 150px;
+    color: $color-black;
+    background-color: $color-white;
+    padding: $spacer-2 $spacer-2;
+    border: none;
+    transition: ease-in-out 0.3s;
+    border-radius: 15px 0;
+
+    &:hover {
+        border-radius: 0 15px;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: darken($color-white, 10%);
+        outline: none;
+    }
+
+    &:disabled {
+        opacity: .4;
+        cursor: not-allowed;
+
+        &:hover {
+            border-radius: 15px 0;
+        }
+    }
+}

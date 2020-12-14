@@ -1,0 +1,54 @@
+@import '../../styles/shared';
+
+:host {
+    display: block;
+    position: relative;
+    background-color: $color-black;
+    border-top: 4px solid $color-white;
+    color: $color-white;
+    padding: $spacer-8 0 $spacer-4;
+}
+
+.time {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    background: $color-black;
+    transform: translate(-50%, -50%);
+    font-size: $body-font-size-2;
+    text-align: center;
+    padding: $spacer-base $spacer-4;
+    border: 4px solid $color-white;
+    border-radius: 30px;
+
+    &__description {
+        display: block;
+        font-size: $body-font-size;
+        color: $color-gray;
+        margin-top: $spacer-base;
+    }
+}
+
+.detail-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.list-item {
+    box-sizing: border-box;
+    width: 185px;
+    text-align: center;
+    padding: $spacer-base;
+    margin: $spacer-2 0;
+
+    &__dt {
+        color: $color-gray;
+        margin-bottom: $spacer-base;
+    }
+
+    &__dd {
+        margin: 0;
+        font-size: $body-font-size-2;
+    }
+}

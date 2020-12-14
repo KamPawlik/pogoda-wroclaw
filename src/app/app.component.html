@@ -1,0 +1,21 @@
+<div *ngIf="weatherStatus.fetched" class="layout">
+  <div class="header">
+      <div class="header__brand">
+          <h1 class="header__title">Wrocław</h1>
+          <img *ngIf="(results$ | async)?.weather as weather" class="header__image" src="http://openweathermap.org/img/wn/{{weather[0].icon}}@2x.png">
+      </div>
+      <button
+        class="btn"
+        [disabled]="weatherStatus.isLoading"
+        (click)="getWeather()"
+      >
+      Pobierz dane <span>{{timer.currentTime | timer}}</span>
+    </button>
+  </div>
+  <div class="layout__image" [ngClass]="timeOfDay"></div>
+  <app-weather-information [result]="results$ | async" [currentDate]="currentDate"></app-weather-information>
+</div>
+<div *ngIf="!weatherStatus.fetched">
+  <app-loader *ngIf="!weatherStatus.error"></app-loader>
+  <p *ngIf="weatherStatus.error">{{weather.error}}</p>
+</div>
